@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./header.ejs') %>
+
+  <body>
+
+    <h1 class="p-2 mt-5">All Burger Order</h1>
+    <div class="container">
+      <div class="mt-5">
+        <% if(burgers.length>0) {%>
+          <% burgers.forEach(burger=>{ %>
+            <div class="row mt-5">
+              <div class="col-md-2">
+                <img src="../burger.jpg" width="150" alt="">
+              </div>
+              <div class="col-md-10">
+                <h5>Name: <%=burger.name %>
+                </h5>
+                <p>Burger Order: <%= burger.burger %></p>
+                    <p>Location: <%=burger.location %></p>
+                        <p>Order TIme: <%= burger.createdAt %>
+                        </p>
+              </div>
+              <a href="/products/<%=burger._id%>">Show</a>
+            </div>
+            <hr>
+            <% }) %>
+            <% }    else { %>
+                <h4 class="text-center p-6">No orders till now!</h4>
+                <% } %>
+                  
+      </div>
+    </div>
+  </body>
+  <%- include('./footer.ejs') %>
+
+</html>
