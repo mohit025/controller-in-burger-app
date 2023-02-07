@@ -18,10 +18,11 @@
             <p>
               Location:  <%= burger.location %>
             </p>
-            <a href="/<%=burger._id%>/edit">Edit</a>
+            <a href="/orders/<%=burger._id%>/edit">Edit</a>
             
 
-            <form action="/products/<%=burger._id%>?_method=DELETE" method="POST">
+            <!-- <form action="/products/<%=burger._id%>?_method=DELETE" method="POST"> -->
+            <form action="/orders/products/<%=burger._id%>?_method=DELETE" method="POST">
                 <button>Delete</button>
             </form>
         </div>
